@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply w-full px-[20px] sm:w-[540px] md:w-[720px] lg:w-[1000px] xl:w-[1225px];
+}
+
+@layer base {
+  :root {
+    --main-blue: hsl(239, 100%, 65%);
+    --blue: hsl(239, 100%, 55%);
+    --background: 210 20% 98%;
+    --foreground: 220 15% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 20%;
+
+    --primary: 200 95% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 15% 92%;
+    --secondary-foreground: 220 15% 20%;
+
+    --muted: 210 15% 95%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 160 60% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 80% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 90%;
+    --input: 210 15% 90%;
+    --ring: 200 95% 50%;
+
+    --radius: 1rem;
+
+    /* Health status colors */
+    --health-optimal: 210 95% 65%;
+    --health-suboptimal: 45 90% 60%;
+    --health-critical: 0 80% 60%;
+    --health-success: 140 70% 55%;
+
+    /* Gradients */
+    --gradient-optimal: linear-gradient(
+      135deg,
+      hsl(200, 95%, 70%),
+      hsl(220, 90%, 75%),
+      hsl(260, 85%, 70%)
+    );
+    --gradient-suboptimal: linear-gradient(
+      135deg,
+      hsl(160, 70%, 60%),
+      hsl(120, 70%, 55%)
+    );
+    --gradient-critical: linear-gradient(
+      135deg,
+      hsl(0, 80%, 65%),
+      hsl(15, 75%, 60%)
+    );
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(200, 95%, 50%),
+      hsl(220, 90%, 60%)
+    );
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased plus-jakarta-sans;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+
+  .health-orb {
+    @apply rounded-full w-48 h-48 flex items-center justify-center shadow-2xl;
+    background: var(--gradient-optimal);
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+.plus-jakarta-sans {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}

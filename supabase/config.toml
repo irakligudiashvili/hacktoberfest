@@ -1,0 +1,7 @@
+project_id = "cwiiykpgmmjajbgyidzy"
+
+[functions.extract-biomarkers]
+verify_jwt = false
+
+[functions.generate-action-plan]
+verify_jwt = false
